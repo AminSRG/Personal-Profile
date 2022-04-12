@@ -43,7 +43,7 @@ dotnet run "PersonalProfileApplication.csproj"
 
 There are one configuration files. The first one is inherited for all profiles.
 
-- [Common Config](PersonalProfileApplication/appsettings.json)
+- [Common Config](PersonalProfileApp\appsettings.json)
 
 ### Replicas of the pod
 One
