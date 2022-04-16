@@ -3,11 +3,8 @@ using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using PersonalProfileApplication.IServices;
-using PersonalProfileApplication.Services;
 using PersonalProfilePersistence;
 using PersonalProfilePersistence.Context;
-using PersonalProfilePersistence.Skills.Repositories;
 using System.Reflection;
 
 namespace PersonalProfileCore
@@ -91,10 +88,6 @@ namespace PersonalProfileCore
               (assembly: typeof(PersonalProfileApplication.Skill.Commands.SkillCommandValidation).Assembly);
             services.AddTransient
               (typeof(MediatR.IPipelineBehavior<,>), typeof(Dtx.Mediator.ValidationBehavior<,>));
-            services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
-            services.AddScoped(typeof(IFileManager), typeof(FileManager));
-            services.AddScoped(typeof(ISMS), typeof(SMS));
-            services.AddScoped(typeof(IUserService), typeof(UserService));
         }
     }
 }
